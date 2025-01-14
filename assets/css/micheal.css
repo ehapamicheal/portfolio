@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
  
-/* @import url('https://fonts.googleapis.coom/css2family=Poppins:wght@300,400,500,600,700,800,900&display=swap'); */
 
 * {
     padding: 0;
@@ -14,13 +13,13 @@
 }
 
 :root {
+    /*=========== COLORS ===========*/
     --bg-color: #081b29;
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
     --hover-color: #726d72;
 }
-
 
 ::-webkit-scrollbar {
     width: 0.5rem;
@@ -68,8 +67,7 @@ body {
 
 .logo .m-logo {
     color: var(--main-color);
-    font-size: 3rem;
-    
+    font-size: 3rem; 
 }
 
 .navbar {
@@ -107,8 +105,7 @@ section {
 }
 
 
-/* HOME SECTION */
-
+/*=============== HOME SECTION ===============*/
 .home {
     display: flex;
     align-items: center;
@@ -120,7 +117,6 @@ section {
 
 .home-content {
     max-width: 60rem;
-    /* z-index: 99;  to remove the comment after the home image has been added*/
 }
 
 .home-content h1 {
@@ -235,7 +231,6 @@ section {
 }
 
 .home-sci {
-    /* position: absolute; */
     display: flex;
     width: 170px;
     bottom: 4rem;
@@ -324,10 +319,9 @@ section {
 
 
 
-/* PROJECT SECTION */
+/*=============== PROJECT SECTION ===============*/
 .project {
     background: var(--second-bg-color);
-    padding-bottom: 6rem;
 }
 
 .heading {
@@ -343,32 +337,26 @@ section {
 
 .project_main {
     position: relative;
+    padding-bottom: 2rem;
 }
 
 .project_main .project_content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 4rem 2rem;
     position: relative;
-}
-
-.project_main .project_content .project_image_box {
-    position: relative;
-    /*  filter: grayscale(1);
-    transition: filter .5s, transform .5s; */
 }
 
 .project_main .project_content .project_image_box img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 5px;
+    transition: 0.3s ease-in-out;
 }
 
-/* .project_main .project_content .project_image_box:hover img {
-    transform: scale(1.1);
-    filter: none;
-} */
+.project_main .project_content .project_image_box img:hover {
+    transform: scale(1.02);
+}
 
 .project_image_box .project_text_box {
     text-align: center;
@@ -427,31 +415,7 @@ section {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* EDUCATION SECTION */
-
+/*=============== EDUCATION SECTION ===============*/
 .education {
     display: flex;
     justify-content: center;
@@ -520,7 +484,6 @@ section {
     transition: .5s;
 }
 
-
 .education-content .content:hover::before {
     width: 100%;
 }
@@ -546,8 +509,8 @@ section {
 
 
 
-/* SKILLS SECTION */
 
+/*=============== SKILLS SECTION ===============*/
 .skills {
     min-height: auto;
     padding-bottom: 7rem;
@@ -615,10 +578,6 @@ section {
     display: flex;
     justify-content: space-between;
 }
-/* 
-.skills-content .progress h3 span {
-    color: var(--text-color);
-} */
 
 .skills-content .progress .bar {
     height: 2.5rem;
@@ -647,7 +606,6 @@ section {
     width: 65%;
 }
 
-
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
     width: 75%;
 }
@@ -670,8 +628,8 @@ section {
 
 
 
-/* CONTACT SECTION */
 
+/*=============== CONTACT SECTION ===============*/
 .contact {
     min-width: auto;
     padding-bottom: 7rem;
@@ -683,7 +641,6 @@ section {
     transform: translateX(-50%);
 }
 
- 
 .contact_main {
     width: 100%;
     text-align: center;
@@ -745,9 +702,7 @@ section {
 
 
 
-
-/* FOOTER SECTION */
-
+/*=============== FOOTER SECTION ===============*/
 .footer {
     display: flex;
     justify-content: space-between;
@@ -806,8 +761,8 @@ section {
 }
 
 
-/* ANIMATION RELOAD AND SCROLL */
 
+/*=============== ANIMATION RELOAD AND SCROLL ===============*/
 .animate {
     position: absolute;
     top: 0;
@@ -818,13 +773,11 @@ section {
     z-index: 98;
 }
 
-
 .logo .animate, 
 .navbar .animate,
 #menu-icon .animate,
 .home.show-animate .animate {
     animation: showRight 1s ease forwards;
-    /* animation-delay: calc(.3s * var(--i)); */
     animation-delay: calc(.1s * var(--i));
 }
 
@@ -839,7 +792,7 @@ section:nth-child(odd) .animate.scroll,
     background: var(--second-bg-color);
 }
 
-/* .about.show-animate .animate.scroll, */
+/*=============== .about.show-animate .animate.scroll, ===============*/
 .project.show-animate .animate.scroll,
 .education.show-animate .animate.scroll,
 .education.show-animate .education-box .animate.scroll,
@@ -855,9 +808,59 @@ section:nth-child(odd) .animate.scroll,
 }
 
 
+/*=============== KEYFRAMES ANIMATION ===============*/
+@keyframes homeBgText {
 
-/* Media styles goes here */
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
 
+    65%,
+    85% {
+        background-position: 0 0; 
+    }
+}
+
+
+@keyframes homeCursorText {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+
+
+/*=============== MEDIA STYLES GOES HERE ===============*/
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -866,14 +869,11 @@ section:nth-child(odd) .animate.scroll,
     .project {  
         min-height: 72vh;
     }
-
-    
 }
 
 
 
 @media (max-width: 991px) {
-
     .header {
         padding: 2rem 4%;
     }
@@ -891,14 +891,7 @@ section:nth-child(odd) .animate.scroll,
     }
 }
 
-
-
-
-
-
-
 @media (max-width: 768px) {
-
     .header {
         background: var(--bg-color);
     }
@@ -962,9 +955,7 @@ section:nth-child(odd) .animate.scroll,
        transition-delay: .25s; 
     }
 
-
     .home {
-        /* padding: 0 4%;  */
         display: flex;
         align-items: center;
         flex-direction: column-reverse;
@@ -993,12 +984,8 @@ section:nth-child(odd) .animate.scroll,
         width: 100%;
         max-width: 100%;
     }
-
-
     
 }
-
-
 
 @media (max-width: 520px) {
     html {
@@ -1023,39 +1010,15 @@ section:nth-child(odd) .animate.scroll,
         width: 38px;
         height: 38px;
     }
-
-    /* * {
-        outline: 1px solid blue;
-    } */
-
-    /* .image_box {
-        position: relative;
-    }
-    
-    .image_box img {
-        width: 40rem;
-        height: 40rem;
-       
-    } */
     
     
     
-  
+    /*=============== PROJECT SECTION ===============*/
     .project_main .project_content {
         grid-template-columns: 1fr;
     }
 
-    .project_main .project_content .project_image_box.downnn {
-        margin-top: 4rem;
-    }
-  
-    .project_main .project_content .project_image_box {
-      padding-bottom: 8rem;
-    }
-
-
 }
-
 
 @media (max-width: 462px) {
     .home-content h1 {
@@ -1080,20 +1043,10 @@ section:nth-child(odd) .animate.scroll,
     }
 }
 
-
-
 @media (max-width: 371px) {
-
     .home {
         justify-content: center;
     }
-
-    /* .home-content {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-    } */
 
     .home-content h1 {
         font-size: 4rem;
@@ -1106,68 +1059,4 @@ section:nth-child(odd) .animate.scroll,
     
 }
 
-
-
-
-/* KEYFRAMES ANIMATION */
-
-@keyframes homeBgText {
-
-
-    0%,
-    10%,
-    100% {
-        background-position: -33rem 0;
-    }
-
-
-    65%,
-    85% {
-        background-position: 0 0; 
-    }
-}
-
-
-
-
-@keyframes homeCursorText {
-
-
-    0%,
-    10%,
-    100% {
-        width: 0;
-    }
-
-
-    65%,
-    78%,
-    85% {
-        width: 100%;
-        opacity: 1;
-    }
-
-    75%,
-    81% {
-        opacity: 0;
-    }
-}
-
-
-
-@keyframes aboutSpinner {
-
-    100% {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-
-
-@keyframes showRight {
-
-    100% {
-        width: 0;
-    }
-}
 
